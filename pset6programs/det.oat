@@ -1,0 +1,52 @@
+/*
+ *      Matrix determinant by Laplace's formula
+ *
+ */
+
+int det(int[][] matrix)
+{
+    var n = length(matrix);
+
+    if (n == 1) {
+        return matrix[0][0];
+    }
+
+    n = n - 1;
+
+    var d = 0;
+
+    for (var col = 0; col <= n; col = col + 1;) {
+        var submatrix = new int[][n] { i -> new int[n] { j -> 0 } };
+
+        for (var i = 0; i < n; i = i + 1;) {
+            for (var j = 0; j < col; j = j + 1;) {
+                submatrix[i][j] = matrix[i][j];
+            }
+
+            for (var j = col + 1; j <= n; j = j + 1;) {
+                submatrix[i][j - 1] = matrix[i][j];
+            }
+        }
+
+        var cofactor = matrix[n][col] * det(submatrix);
+
+        if ((n + col [&] 1) == 1) {
+            cofactor = -cofactor;
+        }
+
+        d = d + cofactor;
+    }
+
+    return d;
+}
+
+int program(int argc, string[] argv)
+{
+    var n = 10;
+    var matrix = new int[][n] { i -> new int[n] { j -> i * i + (j + 1 << 2) } };
+
+    print_int(det(matrix));
+    print_string("\n");
+
+    return 0;
+}

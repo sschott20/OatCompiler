@@ -1,0 +1,5 @@
+(library
+  (name assert)
+  (wrapped true)
+  (libraries unix)
+  (synopsis "Assertions for Homework Testing"))

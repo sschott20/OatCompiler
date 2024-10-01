@@ -1,0 +1,15 @@
+name: Grading report
+
+on:
+  - push
+  - workflow_dispatch
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Grade submission
+        run: sudo -u opam /home/opam/grade.sh `pwd` "hw6"
+        

@@ -1,0 +1,68 @@
+struct Item {
+  int val;
+  int weight;
+  Item? next
+}
+
+global test = 
+  new Item { val = 5; weight = 4; next =
+  new Item { val = 2; weight = 2; next =
+  new Item { val = 1; weight = 1; next =
+  new Item { val = 5; weight = 3; next =
+  new Item { val = 4; weight = 4; next =
+  new Item { val = 1; weight = 1; next =
+  new Item { val = 2; weight = 1; next =
+  new Item { val = 5; weight = 4; next =
+  new Item { val = 5; weight = 4; next =
+  new Item { val = 2; weight = 2; next =
+  new Item { val = 1; weight = 1; next =
+  new Item { val = 5; weight = 3; next =
+  new Item { val = 4; weight = 4; next =
+  new Item { val = 1; weight = 1; next =
+  new Item { val = 2; weight = 1; next =
+  new Item { val = 5; weight = 4; next =
+  new Item { val = 5; weight = 4; next =
+  new Item { val = 2; weight = 2; next =
+  new Item { val = 7; weight = 3; next =
+  new Item { val = 4; weight = 4; next =
+  new Item { val = 1; weight = 1; next =
+  new Item { val = 2; weight = 1; next =
+  new Item { val = 5; weight = 4; next =
+  new Item { val = 5; weight = 4; next =
+  new Item { val = 2; weight = 2; next =
+  new Item { val = 5; weight = 3; next =
+  new Item { val = 2; weight = 4; next =
+  new Item { val = 2; weight = 1; next =
+  new Item { val = 3; weight = 4; next =
+  Item null }}}}}}}}}}}}}}}}}}}}}}}}}}}}};
+
+global test2 =
+  new Item { val = 4; weight = 4; next =
+  new Item { val = 2; weight = 2; next =
+  new Item { val = 1; weight = 1; next =
+  new Item { val = 5; weight = 3; next =
+  new Item { val = 2; weight = 1; next =
+  Item null }}}}};
+
+int max(int a, int b) {
+  if (a > b) {
+    return a;
+  } else {
+    return b;
+  }
+}
+
+int knapsack(Item? i, int budget) {
+  if? (Item i = i) {
+    if (i.weight <= budget) {
+      return max(knapsack(i.next, budget - i.weight) + i.val, knapsack(i.next, budget));
+    } else {
+      return knapsack(i.next, budget);
+    }
+  }
+  return 0;
+}  
+
+int program(int arg, string[] argv) {
+  return knapsack(test, 30);
+}

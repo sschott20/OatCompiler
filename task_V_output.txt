@@ -1,0 +1,123 @@
+Harware: Alex's windows 11 laptop (Version	10.0.22000 Build 22000)
+Processor AMD Ryzen 7 4700U with Radeon Graphics, 2000 Mhz, 8 Core(s)
+
+
+trivial none pset6programs/alexbrian.oat  
+user time : 0.90  
+
+dataflow greedy pset6programs/alexbrian.oat  
+user time : 0.47 
+
+dataflow better pset6programs/alexbrian.oat  
+user time : 0.21  
+
+--clang pset6programs/alexbrian.oat  
+user time : 0.07  
+
+O1 trivial none pset6programs/alexbrian.oat  
+user time : 0.88  
+
+O1 dataflow greedy pset6programs/alexbrian.oat  
+user time : 0.30  
+
+O1 dataflow better pset6programs/alexbrian.oat  
+user time : 0.21  
+
+O1 --clang pset6programs/alexbrian.oat  
+user time : 0.08  
+
+trivial none llprograms/matmul.ll  
+user time : 2.01  
+
+dataflow greedy llprograms/matmul.ll  
+user time : 1.07  
+
+dataflow better llprograms/matmul.ll  
+user time : 0.40  
+
+--clang llprograms/matmul.ll  
+user time : 0.04  
+
+O1 trivial none llprograms/matmul.ll  
+user time : 2.28  
+
+O1 dataflow greedy llprograms/matmul.ll  
+user time : 1.10  
+
+O1 dataflow better llprograms/matmul.ll  
+user time : 0.39  
+
+O1 --clang llprograms/matmul.ll  
+user time : 0.03  
+
+trivial none pset6programs/bintodec.oat  
+user time : 1.23  
+
+dataflow greedy pset6programs/bintodec.oat  
+user time : 1.51  
+
+dataflow better pset6programs/bintodec.oat  
+user time : 0.39  
+
+--clang pset6programs/bintodec.oat  
+user time : 0.16  
+
+O1 trivial none pset6programs/bintodec.oat  
+user time : 1.42  
+
+O1 dataflow greedy pset6programs/bintodec.oat  
+user time : 1.57  
+
+O1 dataflow better pset6programs/bintodec.oat  
+user time : 0.40  
+
+O1 --clang pset6programs/bintodec.oat  
+user time : 0.15  
+
+trivial none pset6programs/det.oat  
+user time : 0.00  
+
+dataflow greedy pset6programs/det.oat  
+user time : 0.00  
+
+dataflow better pset6programs/det.oat  
+user time : 0.00  
+
+--clang pset6programs/det.oat  
+user time : 0.55  
+
+O1 trivial none pset6programs/det.oat  
+user time : 0.00  
+
+O1 dataflow greedy pset6programs/det.oat  
+user time : 0.00  
+
+O1 dataflow better pset6programs/det.oat  
+user time : 0.00  
+
+O1 --clang pset6programs/det.oat  
+user time : 0.53  
+
+trivial none pset6programs/rec_knapsack.oat  
+user time : 4.58  
+
+dataflow greedy pset6programs/rec_knapsack.oat  
+user time : 1.15  
+
+dataflow better pset6programs/rec_knapsack.oat  
+user time : 1.02  
+
+--clang pset6programs/rec_knapsack.oat  
+user time : 0.41  
+
+O1 trivial none pset6programs/rec_knapsack.oat  
+user time : 4.30  
+
+O1 dataflow greedy pset6programs/rec_knapsack.oat  
+user time : 1.09  
+
+O1 dataflow better pset6programs/rec_knapsack.oat  
+user time : 1.00  
+
+O1 --clang pset6programs/rec_knapsack.oat  
+user time : 0.42  

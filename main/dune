@@ -1,0 +1,6 @@
+(executables
+ (names main printanalysis)
+ (public_names main.native printanalysis.native)
+ (libraries code)
+ (package project))
+

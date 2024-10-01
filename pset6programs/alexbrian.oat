@@ -1,0 +1,89 @@
+/* Leetcode problem 2100: Find Good Days to Rob the Bank */
+/* low key this is super messy and doesn't show the optimizations well, which is why I had to hack in things to slow it down */
+
+
+
+/* dynamic programming problem solved instead with brute force recursion ;) */
+/* You and a gang of thieves are planning on robbing a bank. You are given a 0-indexed integer array security, where security[i] is the number of guards on duty on the ith day. The days are numbered starting from 0. You are also given an integer time.
+
+The ith day is a good day to rob the bank if:
+
+There are at least time days before and after the ith day,
+The number of guards at the bank for the time days before i are non-increasing, and
+The number of guards at the bank for the time days after i are non-decreasing.
+More formally, this means day i is a good day to rob the bank if and only if security[i - time] >= security[i - time + 1] >= ... >= security[i] <= ... <= security[i + time - 1] <= security[i + time].
+
+Return a list of all days (0-indexed) that are good days to rob the bank. The order that the days are returned in does not matter. */
+
+int is_good_day (int asdf, int[] security, int time,int  day,int  arr_len ){
+
+    
+    if (day - time < 0 )
+    {
+        return 1;
+    }
+
+    if (day + time > arr_len - 1)
+    {
+        return 1;
+    }
+    
+    for (var i = 0; i < time; i = i + 1;){
+        if (security[day - time + i] < security[day - time + i + 1]){
+            return 1;
+        }
+    }
+    for (var i = 0; i < time; i = i + 1;){
+        if (security[day + i] > security[day + i + 1]){
+            return 1;
+        }
+    }
+    /* print_int(day);
+    print_string("\n"); */
+    return asdf;
+}
+
+int number_of_good_days (int[] security,int time, int arr_len){
+    
+    var a2 = time;
+    var a3= time * a2;
+    var a4= time * a3;
+    var a5= time * a4;
+    var a6= time * a5;
+    var a7= time * a6;
+    var a8= time * a7;
+    var a9= time * a8;    
+
+    var asdf = 0;
+
+    for (var i = 0; i < arr_len; i = i + 1;){
+
+        if (is_good_day (a9, security, time, i, arr_len) > 1){
+            asdf = asdf + 1;
+        }
+    }
+    return asdf + a2 + a3 + a4 + a5 + a6 + a7 + a8 + a9;
+}
+
+
+int program ()
+{
+
+    var sec1 =  new int[] {7,6,5,4,3,4,5,6,7};
+    var sec2 =  new int[] {1,1,1,1,1,1,1,1};
+    var sec3 = new int[] {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
+    var acc = 0;
+    
+    var time = 2;
+    for (var i = 0; i < 200000; i = i+1;)
+    {
+
+        acc = acc + number_of_good_days (sec3, 50, 100);
+        acc = acc + number_of_good_days (sec2, 2, 8);
+        acc = acc + number_of_good_days (sec1, 2, 9);
+    }
+
+    return acc; 
+}
+
+
